@@ -2,13 +2,14 @@ import requests
 # import smtplib as smtp
 from twilio.rest import Client
 
-# MY_EMAIL = "m0980245345@gmail.com"
-# PASSWORD = "hfibakfrcijyjxvm"
+# MY_EMAIL = "YOUR_EMAIL"
+# PASSWORD = "YOUR_PASSWORD"
 account_sid = "ACb3a2c0ef2d9c56f61660b6ccdf6c5d21"
-auth_token = "013e5986396e4da06f10af8f1a73a353"
+auth_token = "YOUR_AUTH_TOKEN"
 
-api_keys = "e3fc3257aa43303c853b2555443ff2dd"
+api_keys = "YOUR_API_KEYS"
 END_POINT = "https://api.openweathermap.org/data/2.5/onecall"
+# Taipei Location
 lat = 25.0478
 lon = 121.5319
 qsp = {
@@ -31,8 +32,8 @@ for hr_data in weather_data:
 
 if will_rain:
     client = Client(account_sid, auth_token)
-    sender_number = "+12058902881"
-    receiver_number = "+886980245345"
+    sender_number = "YOUR_SENDER_NUMBER"
+    receiver_number = "YOUR_PHONE_NUMBER"
     msg = client.messages \
         .create(
             body="\nIt's going to rain today! \nRainy Day ALERT! Be sure to bring an umbrella when you go outside☔.️",
@@ -44,7 +45,7 @@ if will_rain:
     # with smtp.SMTP("smtp.gmail.com") as conn:
     #     conn.starttls()
     #     conn.login(user=MY_EMAIL, password=PASSWORD)
-    #     conn.sendmail(from_addr=MY_EMAIL, to_addrs="a107060202@mail.shu.edu.tw",
+    #     conn.sendmail(from_addr=MY_EMAIL, to_addrs="YOUR_EMAIL",
     #                   msg="Subject : Rainy Day ALERT!!"
     #                       "\n\n今天上班時段會下雨，出門前記得帶把傘唷！".encode("utf-8"))
     #     conn.close()
